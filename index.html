@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="script.js"></script>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
 
@@ -16,171 +14,95 @@
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <script>
-        // Header
-        fetchData("/header_links.json").then((headerResponse) => {
-            if (!headerResponse.status) {
-                return;
-            }
-
-            const headerItems = headerResponse.result;
-
-            const container = document.getElementById('header-container');
-
-            headerItems.forEach((item, index) => {
-                const a = document.createElement("a");
-                a.className = "text-[#0000EE] underline underline-offset-4";
-                a.innerHTML = item.title;
-                a.href = item.link;
-                a.target = "_blank";
-
-                container.appendChild(a);
-
-                if (index < headerItems.length - 1) {
-                    const separator = document.createTextNode("/");
-                    container.appendChild(separator);
-                }
-            });
-        });
-
-        // Categories
-        fetchData("/categories/categories_info.json").then((categoriesInfoResponse) => {
-            if (!categoriesInfoResponse.status) {
-                return;
-            }
-
-            const header = document.getElementById("categories-header");
-            header.innerHTML = "categories";
-
-            const categories = categoriesInfoResponse.result;
-
-            const container = document.getElementById('categories-container');
-
-            categories.forEach((item) => {
-                const li = document.createElement("li");
-                li.className = "flex flex-col items-start gap-1";
-
-                const a = document.createElement("a");
-                a.className = "flex items-center gap-1.5"
-                a.href = item["path"];
-
-                const span = document.createElement("span");
-                span.className = "text-[#0000EE] font-medium underline underline-offset-4";
-                span.innerHTML = item.title;
-
-                a.appendChild(span);
-
-                if (item.status !== undefined && item.status !== null) {
-                    const dash = document.createTextNode("-");
-
-                    a.appendChild(dash);
-
-                    const span2 = document.createElement("span");
-                    span2.className = "text-xs text-[#09090B] tracking-tight underline underline-offset-4";
-                    span2.innerHTML = item.status;
-
-                    a.appendChild(span2);
-                }
-
-                const span3 = document.createElement("span");
-                span3.className = "text-sm text-[#09090B]";
-                span3.innerHTML = item.description;
-
-                li.appendChild(a);
-                li.appendChild(span3);
-
-                container.appendChild(li);
-            });
-        });
-
-        // miscellaneous
-        fetchData("/categories/miscellaneous/posts_list.json").then((postsResponse) => {
-            if (!postsResponse.status) {
-                return;
-            }
-
-            const posts = postsResponse.result;
-
-            posts.sort((a, b) => {
-                const dateA = new Date(a["date"]);
-                const dateB = new Date(b["date"]);
-                return dateB - dateA;
-            });
-
-            if (!posts.length) {
-                return;
-            }
-
-            const article = document.createElement("article");
-            article.className = "pt-6";
-
-            const h2 = document.createElement("h2");
-            h2.className = "font-jetbrainsMono text-lg tracking-tighter";
-            h2.innerHTML = "miscellaneous";
-
-            article.appendChild(h2);
-
-            const ul = document.createElement("ul");
-            ul.className = "space-y-4 py-4";
-
-            posts.forEach((item) => {
-                const li = document.createElement("li");
-                li.className = "flex flex-col gap-1";
-
-                const div = document.createElement("div");
-                div.className = "flex flex-row items-center justify-between";
-
-                const a = document.createElement("a");
-                a.href = item["path"];
-
-                const span = document.createElement("span");
-                span.className = "text-[#0000EE] font-medium underline underline-offset-4";
-                span.innerHTML = item.title;
-
-                a.appendChild(span);
-
-                const span2 = document.createElement("span");
-                span2.className = "text-xs text-[#09090B] tracking-tight";
-                span2.innerHTML = item["date"];
-
-                const span3 = document.createElement("span");
-                span3.className = "text-sm text-[#09090B]";
-                span3.innerHTML = item.description;
-
-                div.appendChild(a);
-                div.appendChild(span2);
-
-                li.appendChild(div);
-                li.appendChild(span3);
-
-                ul.appendChild(li);
-            });
-
-            article.appendChild(ul);
-
-            const main = document.getElementById("main");
-            main.appendChild(article);
-        });
-
-    </script>
-
     <title>FinnyJakey's Dev Blog</title>
 </head>
 
 <body class="min-h-screen bg-white antialiased font-jetbrainsMono text-[0.9rem] max-w-lg">
 <div class="flex min-h-screen flex-col py-8">
     <header class="container px-8">
-        <div class="flex flex-wrap items-center gap-2 font-medium" id="header-container">
-
+        <div class="flex flex-wrap items-center gap-2 font-medium">
+            <a class="text-[#0000EE] underline underline-offset-4" href="https://www.google.co.kr" target="_blank">
+                Google
+            </a>
+            /
+            <a class="text-[#0000EE] underline underline-offset-4" href="https://www.naver.com" target="_blank">
+                Naver
+            </a>
+            /
+            <a class="text-[#0000EE] underline underline-offset-4" href="https://www.tailwindcss.com" target="_blank">
+                TailwindCSS
+            </a>
         </div>
     </header>
     <main class="container flex flex-col px-8" id="main">
         <article class="pt-6">
-            <h2 class="font-jetbrainsMono text-lg tracking-tighter" id="categories-header">
-
+            <h2 class="font-jetbrainsMono text-lg tracking-tighter">
+                categories
             </h2>
-            <ul class="space-y-4 py-4" id="categories-container">
-
+            <ul class="space-y-4 py-4">
+                <li class="flex flex-col items-start gap-1">
+                    <a class="flex items-center gap-1.5" href="ios/index.html">
+                        <span class="text-[#0000EE] font-medium underline underline-offset-4">
+                            iOS/SwiftUI
+                        </span>
+                        -
+            <span class="text-xs text-[#09090B] tracking-tight underline underline-offset-4">
+                Writing
+            </span>
+                    </a>
+                <span class="text-sm text-[#09090B]">
+                   iOS/SwiftUI Posts
+                </span>
+            </li>
+            <li class="flex flex-col items-start gap-1">
+                    <a class="flex items-center gap-1.5" href="daily/index.html">
+                        <span class="text-[#0000EE] font-medium underline underline-offset-4">
+                            Daily
+                        </span>
+                        
+                    </a>
+                <span class="text-sm text-[#09090B]">
+                   Daily story, chill out :D 잡다한 일상얘기
+                </span>
+            </li>
+            
+            </ul>
+        </article>
+        <article class="pt-6">
+            <h2 class="font-jetbrainsMono text-lg tracking-tighter"
+                >miscellaneous
+            </h2>
+            <ul class="space-y-4 py-4">
+            <li class="flex flex-col gap-1">
+                <div class="flex flex-row items-center justify-between">
+                    <a href="miscellaneous/a.html">
+                        <span class="text-[#0000EE] font-medium underline underline-offset-4">
+                            a
+                        </span>
+                    </a>
+                    <span class="text-xs text-[#09090B] tracking-tight">
+                        2024.07.30 17:14
+                    </span>
+                </div>
+                <span class="text-sm text-[#09090B]">
+                    This is a short description, This is a short description, This is a short description, This is a short description, This is a short description.
+                </span>
+            </li>
+            <li class="flex flex-col gap-1">
+                <div class="flex flex-row items-center justify-between">
+                    <a href="miscellaneous/test-abcde-fghi.html">
+                        <span class="text-[#0000EE] font-medium underline underline-offset-4">
+                            test-abcde-fghi
+                        </span>
+                    </a>
+                    <span class="text-xs text-[#09090B] tracking-tight">
+                        2024.07.30 17:10
+                    </span>
+                </div>
+                <span class="text-sm text-[#09090B]">
+                    -
+                </span>
+            </li>
             </ul>
         </article>
     </main>
