@@ -3,7 +3,7 @@
 async function fetchData(path) {
   try {
     const response = await fetch(
-      `https://raw.githubusercontent.com/FinnyJakey/weblog/main${path}`,
+      `https://raw.githubusercontent.com/FinnyJakey/finnyjakey.github.io-storage/main${path}`,
     );
 
     if (!response.ok) {
