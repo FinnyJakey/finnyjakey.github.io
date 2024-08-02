@@ -27,23 +27,22 @@
 <h1>2. 마크다운 사용법(문법)</h1>
 <h2>2.1. 헤더Headers</h2>
 <ul>
-<li>
-<p>큰제목: 문서 제목<br />
-<code>This is an H1
-    =============</code><br />
-    This is an H1<br />
-    =============</p>
-</li>
-<li>
-<p>작은제목: 문서 부제목<br />
-<code>This is an H2
-    -------------</code><br />
-    This is an H2<br />
-    -------------</p>
-</li>
-<li>
-<p>글머리: 1~6까지만 지원</p>
-</li>
+<li>큰제목: 문서 제목</li>
+</ul>
+<p><code>This is an H1
+  =============</code></p>
+<p># This is an H1</p>
+<ul>
+<li>작은제목: 문서 부제목</li>
+</ul>
+<p>```<br />
+  This is an H2</p>
+<hr />
+<p>```</p>
+<p>This is an H2</p>
+<hr />
+<ul>
+<li>글머리: 1~6까지만 지원</li>
 </ul>
 <pre><code># This is a H1
 ## This is a H2
@@ -66,13 +65,7 @@
 &gt;   &gt;   &gt; This is a third blockqute.
 </code></pre>
 <blockquote>
-<p>This is a first blockqute.</p>
-<blockquote>
-<p>This is a second blockqute.</p>
-<blockquote>
-<p>This is a third blockqute.</p>
-</blockquote>
-</blockquote>
+<p>This is a first blockqute. &gt; This is a second blockqute. &gt; &gt; This is a third blockqute.</p>
 </blockquote>
 <p>이 안에서는 다른 마크다운 요소를 포함할 수 있다.</p>
 <blockquote>
@@ -184,7 +177,7 @@ end code block.
 <p>적용예:</p>
 <hr />
 <p>This is a normal paragraph:<br />
-    This is a code block.<br />
+This is a code block.<br />
 end code block.</p>
 <hr />
 <h3>2.4.1. 코드블럭</h3>
@@ -323,7 +316,7 @@ __double underscores__
 <li>~~cancelline~~</li>
 </ul>
 <blockquote>
-<p><code>문장 중간에 사용할 경우에는 **띄어쓰기** 를 사용하는 것이 좋다.</code> <br />
+<p><code>문장 중간에 사용할 경우에는 **띄어쓰기** 를 사용하는 것이 좋다.</code><br />
 문장 중간에 사용할 경우에는 띄어쓰기를 사용하는 것이 좋다.</p>
 </blockquote>
 <h2>2.8. 이미지</h2>
@@ -341,7 +334,7 @@ __double underscores__
 <img src="http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0" width="40%" height="30%" title="%(비율) 크기 설정" alt="RubberDuck"></img></p>
 <h2>2.9. 줄바꿈</h2>
 <p>3칸 이상 띄어쓰기(<code></code>)를 하면 줄이 바뀐다.</p>
-<pre><code>* 줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다. 
+<pre><code>* 줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다.
 이렇게
 
 * 줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다.___\\ 띄어쓰기
@@ -352,8 +345,8 @@ __double underscores__
 <p>줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다. 이렇게</p>
 </li>
 <li>
-<p>줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다.    \<br />
-이렇게</p>
+<p>줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다. \<br />
+  이렇게</p>
 </li>
 </ul>
             </main>
