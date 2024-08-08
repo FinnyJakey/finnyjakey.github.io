@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="../tailwind.config.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+              rel="stylesheet">
+
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+        
+        <link rel="stylesheet" href="../github-markdown-light.css">
+        
+        <title>FinnyJakey's Dev Blog</title>
+    </head>
+    <body class="markdown-body min-h-screen bg-white antialiased font-jetbrainsMono text-[0.9rem] max-w-2xl">
+        <div class="flex min-h-screen flex-col py-8">
+            <main class="container flex flex-col px-8">
+                <h1>Two kinds of information that computer understands</h1>
+<p>The computer understands two kinds of information: <code>Data</code> and <code>Instruction</code>.</p>
+<h2>Data</h2>
+<p>The computer is simple. It is a machine. this machine only knows 0 and 1. We call this <code>binary</code>.</p>
+<p>As you can see, all things like text, numbers, images, and videos consist of binary digits.</p>
+<p>The information that computers send and receive or the information stored inside the computer is called data.</p>
+<p>This is what we call <code>Data</code>.</p>
+<p>The <code>data</code> is used to send and receive the information from computer, and is also stored inside the coumputer.</p>
+<h3>How to express a <code>number</code> with a binary.</h3>
+<p>In human society, we generally use the decimal system the most.</p>
+<p>It consists of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. After 9, we increase the number of digits to represent numbers like 10, 11, 12, and so on.</p>
+<p>Similarly, in the binary system, there are only two digits: 0 and 1. After 1, we increase the number of digits, so the next number is represented as 10 in binary.</p>
+<p>Decimal: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9</p>
+<p>Binary: 0, 1, 10, 11, 100, 101, 110, 111, 1000, 1001</p>
+<blockquote>
+<p>Tip: If you want to calculate binary to decimal, for example,</p>
+<p><code>110</code> -&gt; <code>2^2 x 1(on) + 2^1 x 1(on) + 2^0 x 0(off) = 6</code></p>
+<p><code>10101</code> -&gt; <code>2^4 x 1(on) + 2^3 x 0(off) + 2^2 x 1(on) + 2^1 x 0(off) + 2^0 x 1(on) = 21</code></p>
+</blockquote>
+<p>So the computer understands 6 to 110 and 21 to 10101.</p>
+<h3>How to express a <code>character</code> with a binary: ASCII.</h3>
+<p>The computer understands a charcter with the ASCII code.</p>
+<blockquote>
+<p>ASCII is used in many devices that use characters, including computers and communication equipment, and most of the character encoding is based on this.</p>
+</blockquote>
+<p>There is a large amount of code that is represented in the form of a table.</p>
+<p>Example</p>
+<ul>
+<li>The uppercase letter 'A' corresponds to <code>65</code> in ASCII code and is <code>01000001</code> in binary.</li>
+<li>The lowercase letter 'a' corresponds to <code>97</code> in ASCII code and is <code>01100001</code> in binary.</li>
+</ul>
+<h2>Instruction</h2>
+<p>The computer is a machine that processes instructions.</p>
+<p>What the instructions really is?</p>
+<p>The information that makes a computer work practically and works with the <code>data</code>.</p>
+<blockquote>
+<p>The <code>data</code> actually is a kind of material for <code>instructions</code>.</p>
+</blockquote>
+<p>Example</p>
+<ul>
+<li>Add 1 and 2. -&gt; <code>1</code> and <code>2</code> are <code>data</code>, <code>Add</code> is a <code>instruction</code>.</li>
+<li>Print "Hello, world!" -&gt; <code>Hello, world!</code> is a data, <code>Print</code> is a <code>instruction</code>.</li>
+</ul>
+            </main>
+        </div>
+    </body>
+    </html>
